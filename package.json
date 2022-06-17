@@ -1,0 +1,32 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "An application created to exercise API consumption.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "lite-server --baseDir=dist",
+    "start": "concurrently \"npm run watch\" \"npm run server\"",
+    "compile": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiago-augustin/pokedex-typescript.git"
+  },
+  "keywords": [
+    "api",
+    "typescript"
+  ],
+  "author": "Thiago José Augustin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiago-augustin/pokedex-typescript/issues"
+  },
+  "homepage": "https://github.com/thiago-augustin/pokedex-typescript#readme",
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "lite-server": "^2.6.1",
+    "typescript": "^4.7.3"
+  }
+}
