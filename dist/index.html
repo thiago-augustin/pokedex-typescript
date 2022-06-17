@@ -7,37 +7,38 @@
     <title>Pokédex</title>
 </head>
 <body>
+    <header>
+        <h1>Pokédex</h1>
+    </header>
+    <section class="search">
+        <div class="search-bar-div">
+            <input type="text" class="search-bar" placeholder="Input a Pokémon name or ID...">
+            <img src="assets/search-icon.svg" alt="">
+        </div>
+        <div class="filter-div">
+            <img src="assets/filter-icon.svg" alt="">
+        </div>
+    </section>
+    <section class="pokemons">
+
+    </section>
+    <footer>
+        <button class="button-more">see more</button>
+    </footer>
     <script>
+    buscaPoke("https://pokeapi.co/api/v2/pokemon/2");
     function pokeListener () {
         let pokemon = JSON.parse(this.responseText);
-        console.log(pokemon.id);
-        console.log(pokemon.name);
-        console.log(pokemon.stats);
-        console.log(pokemon.abilities);
-        console.log(pokemon.types);
-        console.log(pokemon.height/10);
-        console.log(pokemon.weight/10);
+        console.log(pokemon)
     };
 
-    function evoListener () {
-        let evolution = JSON.parse(this.responseText);
-        console.log(evolution.chain);
-        console.log(evolution.chain.species);
-        console.log(evolution.chain.evolves_to);
-
-    };
-
-    var pokeReq = new XMLHttpRequest();
-    pokeReq.onload = pokeListener;
-    pokeReq.open("get", "https://pokeapi.co/api/v2/pokemon/charizard", true);
-    pokeReq.send();
-
-    var evoReq = new XMLHttpRequest();
-    evoReq.onload = evoListener;
-    evoReq.open("get", "https://pokeapi.co/api/v2/evolution-chain/1/", true);
-    evoReq.send();
-
-    
+    function buscaPoke(url){
+        var urlBusca = url;
+        var pokeReq = new XMLHttpRequest();
+        pokeReq.onload = pokeListener;
+        pokeReq.open("get", urlBusca, true);
+        pokeReq.send();
+    }
     </script>
 </body>
 </html>
